@@ -17,15 +17,12 @@ I wanted to create an easy to setup experience that would work on any machine. D
 This is important so that the client has messages to display. Note: this can also be done with postman if desired.
 
 ```
-curl -d '{"subject": "this is a test", "message": "test message"}' -H "Content-Type: application/json" -X POST http://localhost:9000/notifications
-curl -d '{"subject": "this is another test", "message": "test message 2"}' -H "Content-Type: application/json" -X POST http://localhost:9000/notifications
-curl -d '{"subject": "this is another  test", "message": "test message 3"}' -H "Content-Type: application/json" -X POST http://localhost:9000/notifications
-curl -d '{"subject": "this is another  test", "message": "test message 4"}' -H "Content-Type: application/json" -X POST http://localhost:9000/notifications
-curl -d '{"subject": "this is another  test", "message": "test message 5"}' -H "Content-Type: application/json" -X POST http://localhost:9000/notifications
+curl -d '{"userId": 1, "subject": "You'\''ve reached a new goal!", "message": "Now might be a great time to share the good news."}' -H "Content-Type: application/json" -X POST http://localhost:9000/notifications
+curl -d '{"userId": 1, "subject": "Have you shared any progress in a while?", "message": "Sharing the progress of your campaigns can help build and maintain engagement with donors."}' -H "Content-Type: application/json" -X POST http://localhost:9000/notifications
 ```
 
 ### Test Get Notifications from DB
 
 This is only required if you would like to test that the above calls worked.
 
-`curl http://localhost:9000/notifications`
+`curl http://localhost:9000/notifications/1`

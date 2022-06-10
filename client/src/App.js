@@ -10,7 +10,7 @@ function App() {
     setIsLoading(true);
     try {
       const response = await fetch(
-        'http://localhost:9000/notifications'
+        'http://localhost:9000/notifications/1'
       );
       const data = await response.json();
       setNotifications(data);
@@ -38,7 +38,7 @@ function App() {
             {notifications.map(({ subject, message }, index) => (
               <li
                 key={`${subject}-${index}`}
-              >{`Subject: ${subject} -- Message: ${message}`}</li>
+              >{`${subject}: ${message}`}</li>
             ))}
           </ul>
         ) : (

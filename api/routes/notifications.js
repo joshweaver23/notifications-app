@@ -13,8 +13,10 @@ router.post('/', async (req, res, next) => {
   }
 });
 
-router.get('/', async (req, res, next) => {
-  const notifications = await notificationsModel.find({});
+router.get('/:uid', async (req, res, next) => {
+  const notifications = await notificationsModel.find({
+    userId: req.params.uid,
+  });
 
   try {
     res.send(notifications);
